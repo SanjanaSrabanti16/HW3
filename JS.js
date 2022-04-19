@@ -155,7 +155,7 @@
             // ball.style.left = (maxY * y / 180 - 10) + "px";
             // ball.style.top = (maxX * x / 180 - 10) + "px";
 
-            if (x > 0 && x < 180) {            	
+            if (x > -20 && x < 180) {            	
             	//undo();
             	$('#btnUndo:not(.btn-dis)').click();
             	flag = false;
