@@ -151,9 +151,9 @@
             // ball.style.left = (maxY * y / 180 - 10) + "px";
             // ball.style.top = (maxX * x / 180 - 10) + "px";
 
-            if (y > 0) {
+            if (y > 45) {
             	undo();
-            } else {
+            } else if(y < -45) {
             	redo();
             }
         }
