@@ -49,6 +49,9 @@
 			background: #EF8354;
 			border: 2px solid #EF8354;
 		}
+		#btnUndo, #btnRedo {
+			/*display: none;*/
+		}
 		p {
 			margin: 0;
 			padding: 0;

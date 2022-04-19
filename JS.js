@@ -111,21 +111,21 @@
 			};
 		}); // this allows you to hit 'enter' on your keyboard to add a value, instead of having to click the 'add' button every time.
 
-		function undo(){
-			txtCount--;
-			undo();
-			btnSwitch();
-			showAll(); // all functions described above.
+		// function undo(){
+		// 	txtCount--;
+		// 	undo();
+		// 	btnSwitch();
+		// 	showAll(); // all functions described above.
 
-		}
+		// }
 
-		function redo(){
-			txtCount++;
-			redo();
-			btnSwitch();
-			showAll(); // all functions described above.
+		// function redo(){
+		// 	txtCount++;
+		// 	redo();
+		// 	btnSwitch();
+		// 	showAll(); // all functions described above.
 
-		}
+		// }
 
 
         function handleOrientation(event) {
@@ -153,9 +153,11 @@
             // ball.style.top = (maxX * x / 180 - 10) + "px";
 
             if (y > 45) {
-            	undo();
+            	//undo();
+            	$('#btnUndo').click();
             } else if(y < -45) {
-            	redo();
+            	//redo();
+            	$('#btnRedo').click();
             }
         }
         console.log('hi');
