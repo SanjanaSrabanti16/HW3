@@ -133,12 +133,11 @@
 
 
         function handleOrientation(event) {
-        	console.log('hi 1');
             output.textContent = `Permission Granted. \n`;
             var x = event.beta; // In degree in the range [-180,180)
             //var y = event.gamma; // In degree in the range [-90,90)
 
-            output.textContent += `beta : ${x}\n`;
+            //output.textContent += `beta : ${x}\n`;
             //output.textContent += `gamma: ${y}\n`;
 
             // Because we don't want to have the device upside down
@@ -168,7 +167,6 @@
             	flag = true;
             }
         }
-        console.log('hi');
 
         window.addEventListener("deviceorientation", handleOrientation, true);
 
@@ -184,7 +182,6 @@
                     .then(response => {
                         // (optional) Do something after API prompt dismissed.
                         if (response == "granted") {
-                        	console.log('hi 2');
                             window.addEventListener("deviceorientation", handleOrientation, true);
                             $('#request').remove();
                         }
