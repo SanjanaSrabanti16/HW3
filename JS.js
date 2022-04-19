@@ -159,7 +159,7 @@
             	//undo();
             	$('#btnUndo:not(.btn-dis)').click();
             	flag = false;
-            } else if(x > -45 && x < -90) {
+            } else if(x < -45 && x > -90) {
             	//redo();
             	$('#btnRedo:not(.btn-dis)').click();
             	flag = false;
