@@ -13,7 +13,7 @@
 		const btnRedo = document.getElementById('btnRedo');
 		const displayBox = document.getElementById('displayBox');
 		const countBox = document.getElementById('countBox');
-		var output = document.querySelector('permissionClass');
+		var output = document.querySelector('.permissionClass');
 
 		const txtSave = []; // array to save values.
 		const txtDisplay = []; // array to display values.
