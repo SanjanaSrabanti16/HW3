@@ -13,7 +13,7 @@
 		const btnRedo = document.getElementById('btnRedo');
 		const displayBox = document.getElementById('displayBox');
 		const countBox = document.getElementById('countBox');
-		var output = document.querySelector('.permissionClass');
+		const output = document.querySelector('.permissionClass');
 
 		const txtSave = []; // array to save values.
 		const txtDisplay = []; // array to display values.
@@ -129,6 +129,7 @@
 
 
         function handleOrientation(event) {
+        	console.log('hi 1');
             output.textContent = `Permission Granted. \n`;
             //var x = event.beta; // In degree in the range [-180,180)
             var y = event.gamma; // In degree in the range [-90,90)
@@ -157,6 +158,7 @@
             	redo();
             }
         }
+        console.log('hi');
 
         window.addEventListener("deviceorientation", handleOrientation, true);
 
@@ -172,6 +174,7 @@
                     .then(response => {
                         // (optional) Do something after API prompt dismissed.
                         if (response == "granted") {
+                        	console.log('hi 2');
                             window.addEventListener("deviceorientation", handleOrientation, true);
                             $('#request').remove();
                         }
