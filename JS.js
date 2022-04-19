@@ -18,7 +18,7 @@
 		const txtSave = []; // array to save values.
 		const txtDisplay = []; // array to display values.
 		let txtCount = 0; // counts length of current values.
-
+		let flag = true;
 		showAll = () => {
 			displayBox.innerHTML = txtDisplay;
 			countBox.innerHTML = txtCount;
@@ -92,17 +92,21 @@
 		};
 
 		btnUndo.onclick = () => {
-			txtCount--;
-			undo();
-			btnSwitch();
-			showAll(); // all functions described above.
+			if (flag) {
+				txtCount--;
+				undo();
+				btnSwitch();
+				showAll(); // all functions described above.
+			}
 		};
 
 		btnRedo.onclick = () => {
-			txtCount++;
-			redo();
-			btnSwitch();
-			showAll(); // all functions described above.
+			if (flag) {
+				txtCount++;
+				redo();
+				btnSwitch();
+				showAll(); // all functions described above.
+			}
 		};
 
 		inputBox.addEventListener("keyup", event => {
@@ -131,16 +135,16 @@
         function handleOrientation(event) {
         	console.log('hi 1');
             output.textContent = `Permission Granted. \n`;
-            //var x = event.beta; // In degree in the range [-180,180)
-            var y = event.gamma; // In degree in the range [-90,90)
+            var x = event.beta; // In degree in the range [-180,180)
+            //var y = event.gamma; // In degree in the range [-90,90)
 
-            //output.textContent += `beta : ${x}\n`;
-            output.textContent += `gamma: ${y}\n`;
+            output.textContent += `beta : ${x}\n`;
+            //output.textContent += `gamma: ${y}\n`;
 
             // Because we don't want to have the device upside down
             // We constrain the x value to the range [-90,90]
-            // if (x > 90) { x = 90 };
-            // if (x < -90) { x = -90 };
+            if (x > 90) { x = 90 };
+            if (x < -90) { x = -90 };
 
             // To make computation easier we shift the range of
             // x and y to [0,180]
@@ -152,12 +156,16 @@
             // ball.style.left = (maxY * y / 180 - 10) + "px";
             // ball.style.top = (maxX * x / 180 - 10) + "px";
 
-            if (y > 45) {
+            if (x > 45 && x < 90) {            	
             	//undo();
-            	$('#btnUndo').click();
-            } else if(y < -45) {
+            	$('#btnUndo:not(.btn-dis)').click();
+            	flag = false;
+            } else if(x > -90 && x < -45) {
             	//redo();
-            	$('#btnRedo').click();
+            	$('#btnRedo:not(.btn-dis)').click();
+            	flag = false;
+            } else {
+            	flag = true;
             }
         }
         console.log('hi');
