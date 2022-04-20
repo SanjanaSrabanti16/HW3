@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-
     <title>Health Disparities</title>
-
     <!--STYLESHEETS-->
     <!-- Custom styles for this template-->
     <link href="CSS.css" rel="stylesheet">
-    
-
 </head>
 
 <body id="page-top">
     <div class='cont'>
-	  <div class='title'>
-	    <h1>Simple Undo &amp; Redo Functionality</h1>
-	    <h2 class="permissionClass">Click the request button to allow permission</h2>
-	    <button id="request">!Request Access</button>
-	  </div>
-	  <div class='wrap'>
-	    <div class='input-cont'>
-	      <input id='inputBox' placeholder='write something and hit enter'>
-	      <button id='btnAdd' type='submit'>add</button>
-	    </div>
-	    <div id='displayBox' class='display-box'></div>
-	    <div class='btn-cont'>
-	      <div class='count-box'>
-	        <div id='countBox'>0</div>
-	        <p class='count-box-desc'>(the length of the added values)</p>
-	      </div>
-	      <button id='btnUndo'>undo</button>
-	      <button id='btnRedo'>redo</button>
-	    </div>
-	  </div>
-	</div>
-	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+        <div class='title'>
+            <h1>Simple Undo &amp; Redo Functionality</h1>
+            <h2 class="permissionClass">Click the request button to allow permission</h2>
+            <button id="request">!Request Access</button>
+        </div>
+        <div class='wrap'>
+            <div class='input-cont'>
+                <input id='inputBox' placeholder='write something and hit enter'>
+                <div class="result"></div>
+                <button id='btnAdd' type='submit'>add</button>
+            </div>
+            <div id='displayBox' class='display-box'></div>
+            <div class='btn-cont'>
+                <div class='count-box'>
+                    <div id='countBox'>0</div>
+                    <p class='count-box-desc'>(the length of the added values)</p>
+                </div>
+                <button id='btnUndo'>undo</button>
+                <button id='btnRedo'>redo</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script src="JS.js"></script>
 </body>
+
 </html>
