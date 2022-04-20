@@ -139,10 +139,10 @@
 
         function undo() {
             if (data.length > 0) {
-                var pop = data.pop().trim();
+                let pop = data.pop().trim();
                 undoData.push(pop);
                 $('.result').text(data, undoData);
-                var result = '';
+                let result = '';
                 $.each(data, function(index, value) {
                     result += value;
                 });
@@ -154,10 +154,10 @@
 
         function redo() {
             if (undoData.length > 0) {
-                var pop = undoData.pop().trim();
+                let pop = undoData.pop().trim();
                 data.push(pop);
                 $('.result').text(data, undoData);
-                var result = '';
+                let result = '';
                 $.each(data, function(index, value) {
                     result += value;
                 });
@@ -168,14 +168,14 @@
         }
 
         $(document).on('touchend', '#inputBox', function() {
-            var str = $(this).val().trim();
+            let str = $(this).val().trim();
             data.push(str.charAt(str.length - 1));
             $('.result').text(data, undoData);
         });
 
         function handleOrientation(event) {
             output.textContent = `Permission Granted. \n`;
-            var x = event.beta; // In degree in the range [-180,180)
+            let x = event.beta; // In degree in the range [-180,180)
             //var y = event.gamma; // In degree in the range [-90,90)
 
             //output.textContent += `beta : ${x}\n`;
