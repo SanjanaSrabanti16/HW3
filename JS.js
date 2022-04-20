@@ -196,11 +196,11 @@
             // ball.style.left = (maxY * y / 180 - 10) + "px";
             // ball.style.top = (maxX * x / 180 - 10) + "px";
 
-            if (x > -20 && x < 180) {
+            if (x > -20 && x < 180 && flag) {
                 undo();
                 //$('#btnUndo:not(.btn-dis)').click();
                 flag = false;
-            } else if (x > -180 && x < -90) {
+            } else if (x > -180 && x < -90 && flag) {
                 redo();
                 //$('#btnRedo:not(.btn-dis)').click();
                 flag = false;
