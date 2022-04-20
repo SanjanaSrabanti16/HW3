@@ -163,7 +163,7 @@
             }
         }
 
-        $(document).on('keyup', '#input', function(e) {
+        $(document).on('keyup', '#inputBox', function(e) {
             var str = $(this).val().trim();
             data.push(str.charAt(str.length - 1));
         });
