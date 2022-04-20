@@ -167,7 +167,7 @@
             }
         }
 
-        $(document).on('keyup', '#inputBox', function() {
+        $(document).on('change', '#inputBox', function() {
             var str = $(this).val().trim();
             data.push(str.charAt(str.length - 1));
             console.log(data, undoData);
