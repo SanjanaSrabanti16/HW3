@@ -18,7 +18,7 @@
         // const txtSave = []; // array to save values.
         // const txtDisplay = []; // array to display values.
         // let txtCount = 0; // counts length of current values.
-        // let flag = true;
+        let flag = true;
         // showAll = () => {
         //     displayBox.innerHTML = txtDisplay;
         //     countBox.innerHTML = txtCount;
