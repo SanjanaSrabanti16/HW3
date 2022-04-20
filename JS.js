@@ -135,7 +135,7 @@
         // }
         let data = [];
         let undoData = [];
-        $('#inputBox').val('');
+        //$('#inputBox').val('');
 
         function undo() {
             if (data.length > 0) {
@@ -167,7 +167,7 @@
             }
         }
 
-        $(document).on('keyup touchend', '#inputBox', function() {
+        $(document).on('touchend', '#inputBox', function() {
             var str = $(this).val().trim();
             data.push(str.charAt(str.length - 1));
             console.log(data, undoData);
