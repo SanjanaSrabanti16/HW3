@@ -141,7 +141,7 @@
             if (data.length > 0) {
                 var pop = data.pop().trim();
                 undoData.push(pop);
-                console.log(data, undoData);
+                $('.result').text(data, undoData);
                 var result = '';
                 $.each(data, function(index, value) {
                     result += value;
@@ -156,7 +156,7 @@
             if (undoData.length > 0) {
                 var pop = undoData.pop().trim();
                 data.push(pop);
-                console.log(data, undoData);
+                $('.result').text(data, undoData);
                 var result = '';
                 $.each(data, function(index, value) {
                     result += value;
@@ -170,7 +170,7 @@
         $(document).on('touchend', '#inputBox', function() {
             var str = $(this).val().trim();
             data.push(str.charAt(str.length - 1));
-            console.log(data, undoData);
+            $('.result').text(data, undoData);
         });
 
         function handleOrientation(event) {
