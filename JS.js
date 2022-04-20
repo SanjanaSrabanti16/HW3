@@ -167,7 +167,7 @@
             }
         }
 
-        $(document).on('touchend', '#inputBox', function() {
+        $(document).on('input', '#inputBox', function() {
             let str = $(this).val().trim();
             data.push(str.charAt(str.length - 1));
             $('.result').text(data, undoData);
