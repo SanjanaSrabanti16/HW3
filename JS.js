@@ -78,7 +78,7 @@
             const txtGetValue = txtSave[txtGetLength];
             txtDisplay.push(txtGetValue);
             // this finds the length of the displayed area and then tells the saved array to go to the index equivalent to the length of the displayed array and then pushes the value to the displayed array.
-            
+
         	txtCount++;
         	// redo();
         	btnSwitch();
@@ -189,15 +189,15 @@
             // ball.style.left = (maxY * y / 180 - 10) + "px";
             // ball.style.top = (maxX * x / 180 - 10) + "px";
 
-            if (x < 15 && flag===true) {
+            if (Math.ceil(x) == 15 && flag===true) {
                 //undo();
                 $('#btnUndo:not(.btn-dis)').click();
                 flag = false;
-            } else if (x > 80  && flag===true) {
+            } else if (Math.ceil(x) == 80  && flag===true) {
                 //redo();
                 $('#btnRedo:not(.btn-dis)').click();
                 flag = false;
-            } else {
+            } else if(Math.ceil(x) > 15 && Math.ceil(x) < 80)  {
                 flag = true;
             }
         }
