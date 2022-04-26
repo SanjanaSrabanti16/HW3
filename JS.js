@@ -2,7 +2,7 @@
     $(document).ready(function() {
         // var ball = document.querySelector('.ball');
         // var garden = document.querySelector('.garden');
-        var output = document.querySelector('.output');
+        var output = document.querySelector('.permissionClass');
 
         // var maxX = garden.clientWidth - ball.clientWidth;
         // var maxY = garden.clientHeight - ball.clientHeight;
