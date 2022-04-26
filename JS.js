@@ -67,6 +67,10 @@
         undo = () => {
             txtDisplay.pop();
             // removes the last item from ONLY the displayed array.
+            txtCount--;
+        	// undo();
+        	btnSwitch();
+        	showAll(); // all functions described above.
         };
 
         redo = () => {
@@ -74,6 +78,11 @@
             const txtGetValue = txtSave[txtGetLength];
             txtDisplay.push(txtGetValue);
             // this finds the length of the displayed area and then tells the saved array to go to the index equivalent to the length of the displayed array and then pushes the value to the displayed array.
+            
+        	txtCount++;
+        	// redo();
+        	btnSwitch();
+        	showAll(); // all functions described above.
         };
 
         btnAdd.onclick = () => {
@@ -93,23 +102,21 @@
         };
 
         btnUndo.onclick = () => {
-            if (flag) {
-                txtCount--;
-                undo();
-                btnSwitch();
-                showAll(); // all functions described above.
-            }
-            undo1();
+            // if (flag) {
+            //     txtCount--;
+            //     btnSwitch();
+            //     showAll(); // all functions described above.
+            // }
+            undo();
         };
 
         btnRedo.onclick = () => {
-            if (flag) {
-                txtCount++;
-                redo();
-                btnSwitch();
-                showAll(); // all functions described above.
-            }
-            redo1();
+            // if (flag) {
+            //     txtCount++;
+            //     btnSwitch();
+            //     showAll(); // all functions described above.
+            // }
+            redo();
         };
 
         inputBox.addEventListener("keyup", event => {
@@ -119,21 +126,6 @@
 
         }); // this allows you to hit 'enter' on your keyboard to add a value, instead of having to click the 'add' button every time.
 
-        function undo1(){
-        	txtCount--;
-        	// undo();
-        	btnSwitch();
-        	showAll(); // all functions described above.
-
-        }
-
-        function redo1(){
-        	txtCount++;
-        	// redo();
-        	btnSwitch();
-        	showAll(); // all functions described above.
-
-        }
         let data = [];
         let undoData = [];
         //$('#inputBox').val('');
