@@ -62,26 +62,26 @@
             txtSave.push(txtDisplay.slice(-1)); // takes the last value in the displayed array and adds it to the end of the saved array.
         };
 
-        undo = () => {
-            txtDisplay.pop();
-            // removes the last item from ONLY the displayed array.
-            txtCount--;
-        	// undo();
-        	//btnSwitch();
-        	showAll(); // all functions described above.
-        };
+        // undo = () => {
+        //     txtDisplay.pop();
+        //     // removes the last item from ONLY the displayed array.
+        //     txtCount--;
+        // 	// undo();
+        // 	//btnSwitch();
+        // 	showAll(); // all functions described above.
+        // };
 
-        redo = () => {
-            const txtGetLength = txtDisplay.length;
-            const txtGetValue = txtSave[txtGetLength];
-            txtDisplay.push(txtGetValue);
-            // this finds the length of the displayed area and then tells the saved array to go to the index equivalent to the length of the displayed array and then pushes the value to the displayed array.
+        // redo = () => {
+        //     const txtGetLength = txtDisplay.length;
+        //     const txtGetValue = txtSave[txtGetLength];
+        //     txtDisplay.push(txtGetValue);
+        //     // this finds the length of the displayed area and then tells the saved array to go to the index equivalent to the length of the displayed array and then pushes the value to the displayed array.
 
-        	txtCount++;
-        	// redo();
-        	//btnSwitch();
-        	showAll(); // all functions described above.
-        };
+        // 	txtCount++;
+        // 	// redo();
+        // 	//btnSwitch();
+        // 	showAll(); // all functions described above.
+        // };
 
         btnAdd.onclick = () => {
             if (inputBox.value != '') {
@@ -214,6 +214,10 @@
             } else {
                 alert("DeviceMotionEvent is undefined.");
             }
+        }
+
+        if (location.protocol != "https:") {
+            location.href = "https:" + window.location.href.substring(window.location.protocol.length);
         }
         const btn = document.getElementById("request");
         btn.addEventListener("click", permission);
