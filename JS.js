@@ -60,6 +60,8 @@
 
             txtDisplay.push(inputBox.value); // takes whatever was entered in the input and adds it too the displayed array.
             txtSave.push(txtDisplay.slice(-1)); // takes the last value in the displayed array and adds it to the end of the saved array.
+            data = [];
+        	undoData = [];
         };
 
         // undo = () => {
