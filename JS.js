@@ -121,7 +121,7 @@
 
         function undo1(){
         	txtCount--;
-        	undo();
+        	// undo();
         	btnSwitch();
         	showAll(); // all functions described above.
 
@@ -129,7 +129,7 @@
 
         function redo1(){
         	txtCount++;
-        	redo();
+        	// redo();
         	btnSwitch();
         	showAll(); // all functions described above.
 
