@@ -216,9 +216,9 @@
             }
         }
 
-        if (location.protocol != "https:") {
-            location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-        }
+        // if (location.protocol != "https:") {
+        //     location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+        // }
         const btn = document.getElementById("request");
         btn.addEventListener("click", permission);
     });
