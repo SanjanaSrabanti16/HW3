@@ -9,8 +9,8 @@
 
         const inputBox = document.getElementById('inputBox');
         const btnAdd = document.getElementById('btnAdd');
-        // const btnUndo = document.getElementById('btnUndo');
-        // const btnRedo = document.getElementById('btnRedo');
+        const btnUndo = document.getElementById('btnUndo');
+        const btnRedo = document.getElementById('btnRedo');
         const displayBox = document.getElementById('displayBox');
         const countBox = document.getElementById('countBox');
         const output = document.querySelector('.permissionClass');
@@ -28,28 +28,28 @@
 
         }; // displays all arrays and values.
 
-        // showAll();
+        showAll();
 
-        // btnSwitch = () => {
-        //     // if (txtCount <= 0) {
-        //     //     btnUndo.disabled = true;
-        //     //     btnUndo.classList.add('btn-dis');
-        //     // } else {
-        //     //     btnUndo.disabled = false;
-        //     //     btnUndo.classList.remove('btn-dis');
-        //     // }
+        btnSwitch = () => {
+            if (txtCount <= 0) {
+                btnUndo.disabled = true;
+                btnUndo.classList.add('btn-dis');
+            } else {
+                btnUndo.disabled = false;
+                btnUndo.classList.remove('btn-dis');
+            }
 
-        //     // if (txtDisplay.length == txtSave.length) {
-        //     //     btnRedo.disabled = true;
-        //     //     btnRedo.classList.add('btn-dis');
-        //     // } else {
-        //     //     btnRedo.disabled = false;
-        //     //     btnRedo.classList.remove('btn-dis');
-        //     // };
+            if (txtDisplay.length == txtSave.length) {
+                btnRedo.disabled = true;
+                btnRedo.classList.add('btn-dis');
+            } else {
+                btnRedo.disabled = false;
+                btnRedo.classList.remove('btn-dis');
+            };
 
-        // }; // disables the buttons if 'undos' or 'redos' are not avalible and adds a class for styling and creating visual user feeback.
+        }; // disables the buttons if 'undos' or 'redos' are not avalible and adds a class for styling and creating visual user feeback.
 
-        // btnSwitch()
+        btnSwitch()
 
         add = () => {
             const index = txtDisplay.length;
@@ -64,24 +64,24 @@
             txtSave.push(txtDisplay.slice(-1)); // takes the last value in the displayed array and adds it to the end of the saved array.
         };
 
-        // // undo = () => {
-        // //     txtDisplay.pop();
-        // //     // removes the last item from ONLY the displayed array.
-        // // };
+        undo = () => {
+            txtDisplay.pop();
+            // removes the last item from ONLY the displayed array.
+        };
 
-        // // redo = () => {
-        // //     const txtGetLength = txtDisplay.length;
-        // //     const txtGetValue = txtSave[txtGetLength];
-        // //     txtDisplay.push(txtGetValue);
-        // //     // this finds the length of the displayed area and then tells the saved array to go to the index equivalent to the length of the displayed array and then pushes the value to the displayed array.
-        // // };
+        redo = () => {
+            const txtGetLength = txtDisplay.length;
+            const txtGetValue = txtSave[txtGetLength];
+            txtDisplay.push(txtGetValue);
+            // this finds the length of the displayed area and then tells the saved array to go to the index equivalent to the length of the displayed array and then pushes the value to the displayed array.
+        };
 
         btnAdd.onclick = () => {
 
             if (inputBox.value != '') {
                 txtCount++;
                 add();
-                // btnSwitch();
+                btnSwitch();
                 showAll(); // all functions described above.
             } else {
                 const txtAlert = document.createElement('p');
@@ -92,25 +92,25 @@
             inputBox.value = ''; // makes input empty after adding value.
         };
 
-        // btnUndo.onclick = () => {
-        //     // if (flag) {
-        //     //     txtCount--;
-        //     //     undo();
-        //     //     btnSwitch();
-        //     //     showAll(); // all functions described above.
-        //     // }
-        //     undo();
-        // };
+        btnUndo.onclick = () => {
+            if (flag) {
+                txtCount--;
+                undo();
+                btnSwitch();
+                showAll(); // all functions described above.
+            }
+            undo1();
+        };
 
-        // btnRedo.onclick = () => {
-        //     // if (flag) {
-        //     //     txtCount++;
-        //     //     redo();
-        //     //     btnSwitch();
-        //     //     showAll(); // all functions described above.
-        //     // }
-        //     redo();
-        // };
+        btnRedo.onclick = () => {
+            if (flag) {
+                txtCount++;
+                redo();
+                btnSwitch();
+                showAll(); // all functions described above.
+            }
+            redo1();
+        };
 
         inputBox.addEventListener("keyup", event => {
             if (event.keyCode === 13) {
@@ -119,21 +119,21 @@
 
         }); // this allows you to hit 'enter' on your keyboard to add a value, instead of having to click the 'add' button every time.
 
-        // function undo(){
-        // 	txtCount--;
-        // 	undo();
-        // 	btnSwitch();
-        // 	showAll(); // all functions described above.
+        function undo1(){
+        	txtCount--;
+        	undo();
+        	btnSwitch();
+        	showAll(); // all functions described above.
 
-        // }
+        }
 
-        // function redo(){
-        // 	txtCount++;
-        // 	redo();
-        // 	btnSwitch();
-        // 	showAll(); // all functions described above.
+        function redo1(){
+        	txtCount++;
+        	redo();
+        	btnSwitch();
+        	showAll(); // all functions described above.
 
-        // }
+        }
         let data = [];
         let undoData = [];
         //$('#inputBox').val('');
@@ -198,12 +198,12 @@
             // ball.style.top = (maxX * x / 180 - 10) + "px";
 
             if (x < 15 && flag===true) {
-                undo();
-                //$('#btnUndo:not(.btn-dis)').click();
+                //undo();
+                $('#btnUndo:not(.btn-dis)').click();
                 flag = false;
             } else if (x > 80  && flag===true) {
-                redo();
-                //$('#btnRedo:not(.btn-dis)').click();
+                //redo();
+                $('#btnRedo:not(.btn-dis)').click();
                 flag = false;
             } else {
                 flag = true;
